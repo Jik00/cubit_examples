@@ -18,12 +18,20 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
+        themeMode: ThemeMode.dark,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
+          textTheme: const TextTheme(
+            headlineSmall: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
           scaffoldBackgroundColor: kPrimaryColor,
           useMaterial3: true,
         ),
-       home: const SplashView(),
+        home: const SplashView(),
       ),
     );
   }
