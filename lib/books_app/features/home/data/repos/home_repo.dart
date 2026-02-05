@@ -1,3 +1,7 @@
+import 'package:dartz/dartz.dart';
+import '../../../../core/errors/failure.dart';
+import '../models/book_model/book_model.dart';
+
 abstract class HomeRepo {
-  Future<void> getHomeData();
+  Future< Either < Failure , List<BookModel> >> getHomeData();
 }
