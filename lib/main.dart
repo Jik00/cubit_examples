@@ -20,13 +20,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         themeMode: ThemeMode.dark,
         theme: ThemeData(
-          textTheme: const TextTheme(
-            headlineSmall: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
           scaffoldBackgroundColor: kPrimaryColor,
           useMaterial3: true,

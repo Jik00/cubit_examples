@@ -8,27 +8,41 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const HorizontalList(),
-          const SizedBox(
-            height: 42,
-          ),
-          Text('Best Sellers',
-              style: Theme.of(context).textTheme.headlineSmall),
-          const SizedBox(
-            height: 18,
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const BookListTile(),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+      ),
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: CustomScrollView(
+          slivers: [
+            const SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HorizontalList(),
+                  SizedBox(
+                    height: 42,
+                  ),
+                  Text(
+                    'Best Sellers',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 18,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+            SliverList.builder(
+              itemBuilder: (context, index) => const BookListTile(),
+              itemCount: 5,
+            ),
+          ],
+        ),
       ),
     );
   }

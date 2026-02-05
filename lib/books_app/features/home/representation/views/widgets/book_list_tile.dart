@@ -1,3 +1,4 @@
+import 'package:cubit_examples/books_app/core/widgets/rating_row.dart';
 import 'package:flutter/material.dart';
 
 class BookListTile extends StatelessWidget {
@@ -54,25 +55,7 @@ class BookListTile extends StatelessWidget {
                   SizedBox(
                     width: 72,
                   ),
-                  Icon(
-                    Icons.star_rounded,
-                    color: Colors.amberAccent,
-                    size: 18,
-                  ),
-                  Text(
-                    ' 4.8',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    ' (2390)',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 14,
-                    ),
-                  ),
+                  RatingRow()
                 ],
               ),
             ],

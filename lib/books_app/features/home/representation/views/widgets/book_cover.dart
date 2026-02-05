@@ -1,22 +1,34 @@
 import 'dart:ui';
 // import 'package:cubit_examples/books_app/core/utils/app_images.dart';
+import 'package:cubit_examples/books_app/core/utils/app_images.dart';
+import 'package:cubit_examples/books_app/features/book_details/presentation/views/book_details_view.dart';
 import 'package:flutter/material.dart';
 
 class BookCover extends StatelessWidget {
   const BookCover({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 150,
-      height: 240,
       decoration: const BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
       child: Stack(
         children: [
-          // Image.asset(Assets.assetsImagesPreview, fit: BoxFit.fill),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BookDetailsView(),
+                ),
+              );
+            },
+            child: Image.asset(Assets.assetsImagesPreview, fit: BoxFit.fill),
+          ),
           Positioned(
             bottom: 12,
             right: 12,
