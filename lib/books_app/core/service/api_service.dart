@@ -2,10 +2,10 @@ import 'package:cubit_examples/constants.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {
-  final Dio dio;
+  final Dio _dio;
 
-  ApiService({required this.dio});
+  ApiService(this._dio);
 
   // response = Map <String , dynamic>
-Future<Response> get({required String endPoint}) async => await dio.get( kBaseUrl + endPoint);
+Future<Response > get({required String endPoint}) async => await _dio.get( kBaseUrl + endPoint);
 }
