@@ -18,14 +18,8 @@ class DetailsColum extends StatelessWidget {
         const SizedBox(height: 20),
         Text(
             (teamName == 'Team A'
-                ? context.watch<CounterCubit>()
-                    .state
-                    .teamAScore
-                    .toString()
-                : context.watch<CounterCubit>()
-                    .state
-                    .teamBScore
-                    .toString()),
+                ? context.watch<CounterCubit>().state.teamAScore.toString()
+                : context.watch<CounterCubit>().state.teamBScore.toString()),
             style: const TextStyle(fontSize: 200)),
         ElevatedButton(
           onPressed: () {

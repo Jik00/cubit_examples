@@ -31,7 +31,7 @@ class BasketBallCounterViewBody extends StatelessWidget {
         const SizedBox(height: 50),
         ElevatedButton(
           onPressed: () {
-           context.read<CounterCubit>().resetScores();
+            context.read<CounterCubit>().resetScores();
             //BlocProvider.of<CounterCubit>(context).resetScores();
           },
           child: const Text(

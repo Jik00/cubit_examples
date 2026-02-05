@@ -8,10 +8,14 @@ class BookDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(leading: Icons.close_rounded, trailing: Icons.shopping_cart_checkout_rounded, onPressed: () {
-        Navigator.pop(context);
-      },),
-      body: const BookDetailsViewBody(), 
+      appBar: buildAppBar(
+        leading: Icons.close_rounded,
+        trailing: Icons.shopping_cart_checkout_rounded,
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      body: const BookDetailsViewBody(),
     );
   }
 }

@@ -16,7 +16,7 @@ class HorizontalList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return const Padding(
-            padding:  EdgeInsets.only(
+            padding: EdgeInsets.only(
               right: 16,
               top: 8,
             ),
