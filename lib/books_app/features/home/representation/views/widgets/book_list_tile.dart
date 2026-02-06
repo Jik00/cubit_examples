@@ -1,8 +1,11 @@
 import 'package:cubit_examples/books_app/core/widgets/rating_row.dart';
+import 'package:cubit_examples/books_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BookListTile extends StatelessWidget {
-  const BookListTile({super.key});
+  const BookListTile({super.key, required this.book});
+
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -15,35 +18,35 @@ class BookListTile extends StatelessWidget {
             height: 100,
             width: 70,
             decoration: BoxDecoration(
-              color: Colors.blue,
               borderRadius: BorderRadius.circular(6),
             ),
+            child: Image.network( book.image, fit: BoxFit.fitHeight, ),
           ),
           const SizedBox(
             width: 24,
           ),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Text(
-                'Book Title',
-                style: TextStyle(
+                book.title,
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                 ),
               ),
               Text(
-                'Book Author',
-                style: TextStyle(
+                book.authors,
+                style: const TextStyle(
                   color: Colors.grey,
                   fontSize: 14,
                 ),
               ),
               // rating
-              Row(
+              const Row(
                 children: [
                   Text(
                     '19.99 \$',

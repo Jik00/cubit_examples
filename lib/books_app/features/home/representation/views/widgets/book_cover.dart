@@ -1,18 +1,19 @@
 import 'dart:ui';
-// import 'package:cubit_examples/books_app/core/utils/app_images.dart';
-import 'package:cubit_examples/books_app/core/utils/app_images.dart';
 import 'package:cubit_examples/books_app/features/book_details/presentation/views/book_details_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../../data/models/book_model/book_model.dart';
+
 class BookCover extends StatelessWidget {
-  const BookCover({super.key});
+  const BookCover({super.key, required this.book});
+
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 150,
       decoration: const BoxDecoration(
-        color: Colors.blue,
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
       child: Stack(
@@ -26,7 +27,7 @@ class BookCover extends StatelessWidget {
                 ),
               );
             },
-            child: Image.asset(Assets.assetsImagesPreview, fit: BoxFit.fill),
+            child: Image.network( book.image, fit: BoxFit.fill),
           ),
           Positioned(
             bottom: 12,
