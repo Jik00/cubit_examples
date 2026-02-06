@@ -1,5 +1,4 @@
-import 'package:cubit_examples/books_app/features/home/representation/views/widgets/book_list_tile.dart';
-import 'package:cubit_examples/books_app/features/home/representation/views/widgets/horizontal_list.dart';
+import 'package:cubit_examples/books_app/features/home/representation/views/widgets/book_list_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -13,13 +12,13 @@ class HomeViewBody extends StatelessWidget {
       ),
       child: SizedBox(
         height: MediaQuery.of(context).size.height,
-        child: CustomScrollView(
+        child: const CustomScrollView(
           slivers: [
-            const SliverToBoxAdapter(
+             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  HorizontalList(),
+                  BookListBlocBuilder(vertical: false),
                   SizedBox(
                     height: 42,
                   ),
@@ -37,10 +36,7 @@ class HomeViewBody extends StatelessWidget {
                 ],
               ),
             ),
-            SliverList.builder(
-              itemBuilder: (context, index) => const BookListTile(),
-              itemCount: 5,
-            ),
+           BookListBlocBuilder(vertical: true),
           ],
         ),
       ),
