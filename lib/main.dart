@@ -1,10 +1,13 @@
 import 'package:cubit_examples/basket_ball_counter_app/cubit/counter_cubit.dart';
+import 'package:cubit_examples/books_app/core/service/get_it_service.dart';
 import 'package:cubit_examples/books_app/features/splash/presentation/views/splash_view.dart';
 import 'package:cubit_examples/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setUpGetIt();
   runApp(const MyApp());
 }
 
