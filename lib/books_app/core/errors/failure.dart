@@ -1,6 +1,10 @@
-abstract  class Failure {}
+abstract  class Failure {
+  final String message;
+  Failure(this.message);
+}
 
 class ServerFailure extends Failure {
-  final String message;
-  ServerFailure(this.message);
+  ServerFailure(super.message);
+
+  // factory ServerFailure.fromDioError(dynamic error) => ServerFailure(error.toString());
 }
