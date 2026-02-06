@@ -19,7 +19,9 @@ class HomeView extends StatelessWidget {
       body: BlocProvider(
         create: (context) => HomeDataCubit(
           homeRepo: getIt<HomeRepo>(),
-        ),
+        )..fetchHomeData(),   // trigger the method
+
+
         child: const HomeViewBody(),
       ),
     );

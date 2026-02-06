@@ -20,7 +20,7 @@ class BookListTile extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
             ),
-            child: Image.network( book.image, fit: BoxFit.fitHeight, ),
+            child: Image.network( book.image, fit: BoxFit.cover, ),
           ),
           const SizedBox(
             width: 24,
@@ -33,6 +33,8 @@ class BookListTile extends StatelessWidget {
               ),
               Text(
                 book.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis, 
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,

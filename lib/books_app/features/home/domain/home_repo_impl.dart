@@ -16,11 +16,14 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> getHomeData() async {
     try {
       var response = await apiService.get(endPoint: 'recent');
-      
+
       log(response.toString());
 
       return Right(
-        response.data.map((e) => BookModel.fromJson(e)).toList(),
+        (response.data['books'] as List<dynamic>)
+            .map(
+                (bookMap) => BookModel.fromMap(bookMap as Map<String, dynamic>))
+            .toList(),
       );
     } on Exception catch (e) {
       return Left(

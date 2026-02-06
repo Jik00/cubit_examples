@@ -27,7 +27,7 @@ class BookCover extends StatelessWidget {
                 ),
               );
             },
-            child: Image.network( book.image, fit: BoxFit.fill),
+            child: Image.network( book.image, fit: BoxFit.cover),
           ),
           Positioned(
             bottom: 12,

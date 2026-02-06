@@ -1,4 +1,4 @@
-import 'package:cubit_examples/basket_ball_counter_app/cubit/counter_cubit.dart';
+// import 'package:cubit_examples/basket_ball_counter_app/cubit/counter_cubit.dart';
 import 'package:cubit_examples/books_app/core/service/get_it_service.dart';
 import 'package:cubit_examples/books_app/features/splash/presentation/views/splash_view.dart';
 import 'package:cubit_examples/constants.dart';
@@ -19,9 +19,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterCubit(),
-      child: MaterialApp(
+    return 
+    // BlocProvider(
+    //   create: (context) => CounterCubit(),
+    //   child: 
+      
+      MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         themeMode: ThemeMode.dark,
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: const SplashView(),
-      ),
+      // ),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:cubit_examples/books_app/features/home/domain/home_repo_impl.dar
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
-final GetIt getIt = GetIt.instance();
+final getIt = GetIt.instance;
 
 void setUpGetIt() {
   getIt.registerSingleton<ApiService>(ApiService(Dio()));
