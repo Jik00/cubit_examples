@@ -5,9 +5,12 @@ import 'package:cubit_examples/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'books_app/core/service/custom_bloc_observer.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setUpGetIt();
+  Bloc.observer = CustomBlocObserver();
   runApp(const MyApp());
 }
 
