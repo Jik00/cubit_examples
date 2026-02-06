@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cubit_examples/books_app/core/widgets/rating_row.dart';
 import 'package:cubit_examples/books_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
@@ -26,16 +27,19 @@ class BookListTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 100,
-              width: 70,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: Image.network(
-                book.image,
-                fit: BoxFit.cover,
-              ),
-            ),
+                height: 100,
+                width: 70,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: CachedNetworkImage(
+                  imageUrl: book.image,
+                  fit: BoxFit.fill,
+                  placeholder: (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.broken_image),
+                )),
             const SizedBox(
               width: 24,
             ),

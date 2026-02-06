@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cubit_examples/books_app/features/book_details/presentation/views/book_details_view.dart';
 import 'package:flutter/material.dart';
 
@@ -23,11 +24,18 @@ class BookCover extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => BookDetailsView( book : book),
+                  builder: (context) => BookDetailsView(book: book),
                 ),
               );
             },
-            child: Image.network( book.image, fit: BoxFit.cover),
+            child: CachedNetworkImage(
+              imageUrl: book.image,
+              fit: BoxFit.cover,
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) =>
+                  const Icon(Icons.broken_image),
+            ),
           ),
           Positioned(
             bottom: 12,

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cubit_examples/books_app/core/widgets/rating_row.dart';
 import 'package:cubit_examples/books_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,14 @@ class BookDetailsViewBody extends StatelessWidget {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(12)),
           ),
-          child: Image.network(book.image, fit: BoxFit.fill),
+          child: CachedNetworkImage(
+            imageUrl: book.image,
+            fit: BoxFit.fill,
+            placeholder: (context, url) =>
+                const Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) =>
+                const Icon(Icons.broken_image),
+          ),
         ),
         const SizedBox(
           height: 24,
@@ -35,6 +43,7 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
         ),
         Text(
+          textAlign: TextAlign.center,
           book.authors,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
