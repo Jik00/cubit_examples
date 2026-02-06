@@ -23,7 +23,7 @@ class BookCover extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const BookDetailsView(),
+                  builder: (context) => BookDetailsView( book : book),
                 ),
               );
             },

@@ -1,39 +1,44 @@
-import 'package:cubit_examples/books_app/core/utils/app_images.dart';
 import 'package:cubit_examples/books_app/core/widgets/rating_row.dart';
+import 'package:cubit_examples/books_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.book});
+
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           height: 300,
           width: 170,
           decoration: const BoxDecoration(
-            color: Colors.blue,
             borderRadius: BorderRadius.all(Radius.circular(12)),
           ),
-          child: Image.asset(Assets.assetsImagesPreview, fit: BoxFit.fill),
+          child: Image.network(book.image, fit: BoxFit.fill),
         ),
         const SizedBox(
           height: 24,
         ),
-        const Text(
-          'Book Title',
-          style: TextStyle(
+        Text(
+          textAlign: TextAlign.center,
+          book.title,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),
-        const Text(
-          'Author Name',
+        Text(
+          book.authors,
           maxLines: 2,
-          overflow: TextOverflow.ellipsis, 
-          style: TextStyle(
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 18,
           ),
