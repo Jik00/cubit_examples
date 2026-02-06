@@ -1,4 +1,5 @@
-import 'package:cubit_examples/books_app/features/home/representation/views/widgets/book_list_bloc_builder.dart';
+import 'package:cubit_examples/books_app/features/home/representation/views/widgets/book_list_bloc_builder_h.dart';
+import 'package:cubit_examples/books_app/features/home/representation/views/widgets/book_list_bloc_builder_v.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -14,11 +15,11 @@ class HomeViewBody extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         child: const CustomScrollView(
           slivers: [
-             SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BookListBlocBuilder(vertical: false),
+                  BookListBlocBuilderH(),
                   SizedBox(
                     height: 42,
                   ),
@@ -36,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
                 ],
               ),
             ),
-           BookListBlocBuilder(vertical: true),
+            BookListBlocBuilderV(),
           ],
         ),
       ),

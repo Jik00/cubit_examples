@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cubit_examples/books_app/core/errors/failure.dart';
 import 'package:cubit_examples/books_app/features/home/data/models/book_model/book_model.dart';
 import 'package:cubit_examples/books_app/features/home/data/repos/home_repo.dart';
@@ -17,7 +15,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var response = await apiService.get(endPoint: 'recent');
 
-      log(response.toString());
+      // log(response.toString());
 
       return Right(
         (response.data['books'] as List<dynamic>)

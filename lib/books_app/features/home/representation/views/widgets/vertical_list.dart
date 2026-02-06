@@ -13,8 +13,8 @@ class VerticalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList.builder(
-      itemBuilder: (context, index) => BookListTile(book: books[index] ,),
-      itemCount: books.length,
+        itemBuilder: (context, index) => BookListTile(book: books[index] ,),
+        itemCount: books.length,
     );
   }
 }

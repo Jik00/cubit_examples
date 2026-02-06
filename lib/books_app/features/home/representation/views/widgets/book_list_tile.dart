@@ -32,7 +32,7 @@ class BookListTile extends StatelessWidget {
                 height: 12,
               ),
               Text(
-                book.title,
+                book.title.substring(  0, 10),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis, 
                 style: const TextStyle(
@@ -41,7 +41,7 @@ class BookListTile extends StatelessWidget {
                 ),
               ),
               Text(
-                book.authors,
+                book.authors.substring(0 , 8),
                 style: const TextStyle(
                   color: Colors.grey,
                   fontSize: 14,

@@ -31,6 +31,8 @@ class BookDetailsViewBody extends StatelessWidget {
         ),
         const Text(
           'Author Name',
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis, 
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
