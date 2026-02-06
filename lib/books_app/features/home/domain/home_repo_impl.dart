@@ -10,7 +10,7 @@ import '../../../core/service/api_service.dart';
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
 
-  HomeRepoImpl(this.apiService);
+  HomeRepoImpl({required this.apiService});
 
   @override
   Future<Either<Failure, List<BookModel>>> getHomeData() async {

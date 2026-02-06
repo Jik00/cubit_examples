@@ -11,7 +11,7 @@ void setUpGetIt() {
 
   getIt.registerSingleton<HomeRepo>(
     HomeRepoImpl(
-      getIt<ApiService>(),
+      apiService: getIt<ApiService>(),
     ),
   );
 }

@@ -6,7 +6,7 @@ import 'package:equatable/equatable.dart';
 part 'home_data_state.dart';
 
 class HomeDataCubit extends Cubit<HomeDataState> {
-  HomeDataCubit(this.homeRepo) : super(HomeDataInitial());
+  HomeDataCubit({required this.homeRepo}) : super(HomeDataInitial());
 
   final HomeRepo homeRepo;
 
